@@ -23,6 +23,10 @@ const SIX_HOURS_MS = 6 * 60 * 60 * 1000;
 // ---------------------------------------------------------
 // 1. THE API ENDPOINT
 // ---------------------------------------------------------
+app.get("/", (req, res) => {
+    res.send("India AQI Backend is running.");
+});
+
 app.get("/api/get-aqi-data", (req, res) => {
     // Check if metadata exists
     if (!fs.existsSync(METADATA_FILE)) {
