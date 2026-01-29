@@ -1,6 +1,6 @@
 FROM node:22-alpine
 
-WORKDIR /app
+WORKDIR /aqi-dashboard-india-backend
 
 COPY package*.json ./
 RUN npm install
