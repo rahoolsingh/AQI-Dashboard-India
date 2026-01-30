@@ -51,7 +51,11 @@ function getTimestampFilename() {
     const browser = await puppeteer.launch({
         headless: "new",
         defaultViewport: null,
-        args: ["--start-maximized"],
+        args: [
+            "--no-sandbox",
+            "--disable-setuid-sandbox",
+            "--disable-dev-shm-usage",
+        ],
     });
 
     const page = await browser.newPage();
