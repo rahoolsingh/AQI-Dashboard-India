@@ -526,15 +526,21 @@ function App() {
                                 CRITICAL FAILURE
                             </span>
                             <br />
-                            Last Sync:{" "}
-                            {new Date(data.capturedAt).toLocaleString()}
+                            Last Sync: {/* utc to ist */}
+                            {new Date(data.capturedAt).toLocaleString("en-IN", {
+                                timeZone: "Asia/Kolkata",
+                            })}{" "}
+                            IST
                             {/* next update expect after 6 hours from capture_time */}
                             <br />
                             Next Sync:{" "}
                             {new Date(
                                 new Date(data.capturedAt).getTime() +
                                     6 * 60 * 60 * 1000,
-                            ).toLocaleString()}
+                            ).toLocaleString("en-IN", {
+                                timeZone: "Asia/Kolkata",
+                            })}{" "}
+                            IST
                         </p>
                     </div>
 
