@@ -53,7 +53,10 @@ app.get("/api/get-aqi-data", (req, res) => {
         // Read and send the content
         const data = fs.readFileSync(latestFilePath, "utf8");
         res.setHeader("Content-Type", "application/json");
-        res.send(data);
+        res.send({
+            ...JSON.parse(data),
+            currentTime: new Date().toISOString(),
+        });
     } catch (err) {
         console.error("Error serving data:", err);
         res.status(500).json({ error: "Internal Server Error" });
