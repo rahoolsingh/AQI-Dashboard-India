@@ -1,3 +1,5 @@
+name: aqi-dashboard
+
 services:
   app:
     build:
